@@ -1,10 +1,16 @@
+Die one, two, three, four, five, six, seven, eight, nine;
 void setup()
 {
 	noLoop();
+	size(500, 500);
+	one = new Die;
+	two = new Die;
+	three = new Die
 }
 void draw()
 {
-	//your code here
+	background(7, 99, 36);
+
 }
 void mousePressed()
 {
@@ -12,11 +18,12 @@ void mousePressed()
 }
 class Die //models one single dice cube
 {
-	//variable declarations here
+	int myX, myY, num;
 	
 	Die(int x, int y) //constructor
 	{
-		//variable initializations here
+		myX = x;
+		myY = y;
 	}
 	void roll()
 	{
@@ -24,6 +31,6 @@ class Die //models one single dice cube
 	}
 	void show()
 	{
-		//your code here
+		rect(myX, myY, 20, 20);
 	}
 }
