@@ -3,13 +3,28 @@ void setup()
 {
 	noLoop();
 	size(500, 500);
-	one = new Die;
-	two = new Die;
-	three = new Die
+	one = new Die(100, 100);
+	two = new Die(225, 100);
+	three = new Die(350, 100);
+	four = new Die(100, 225);
+	five = new Die(225, 225);
+	six = new Die(350, 225);
+	seven = new Die(100, 350);
+	eight = new Die(225, 350);
+	nine = new Die(350, 350);
 }
 void draw()
 {
 	background(7, 99, 36);
+	one.show();
+	two.show();
+	three.show();
+	four.show();
+	five.show();
+	six.show();
+	seven.show();
+	eight.show();
+	nine.show();
 
 }
 void mousePressed()
@@ -24,6 +39,7 @@ class Die //models one single dice cube
 	{
 		myX = x;
 		myY = y;
+		num = (int)(Math.random() * 6 + 1);
 	}
 	void roll()
 	{
@@ -31,6 +47,10 @@ class Die //models one single dice cube
 	}
 	void show()
 	{
-		rect(myX, myY, 20, 20);
+		rect(myX, myY, 50, 50);
+	}
+	int check()
+	{
+		return num;
 	}
 }
